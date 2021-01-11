@@ -55,7 +55,7 @@ const deviceOptions = {
   host: argv['hvac-host'],
   onStatus: (deviceModel) => {
 /**    publishIfChanged('temperature', deviceModel.props[commands.temperature.code].toString(), '/temperature/get') */
-    publishIfChanged('temperature', getKeyByValue(commands.temperatureUnit.value, deviceModel.props[commands.temperature.code].toString(), '/temperature/get')
+    publishIfChanged('temperature', getKeyByValue(commands.temperatureUnit.value, deviceModel.props[commands.temperature.code]).toString(), '/temperature/get')
     publishIfChanged('fanSpeed', getKeyByValue(commands.fanSpeed.value, deviceModel.props[commands.fanSpeed.code]).toString(), '/fanspeed/get')
     publishIfChanged('swingHor', getKeyByValue(commands.swingHor.value, deviceModel.props[commands.swingHor.code]).toString(), '/swinghor/get')
     publishIfChanged('swingVert', getKeyByValue(commands.swingVert.value, deviceModel.props[commands.swingVert.code]).toString(), '/swingvert/get')
